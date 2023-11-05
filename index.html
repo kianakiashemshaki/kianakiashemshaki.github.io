@@ -1,19 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>My Personal Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
-	<a href="home.html">Home</a>
-	<a href="about.html">About</a>
-	<a href="cats.html">Cat Pictures</a>
-	<hr/>
+    <header>
+        <h1>Welcome to My Personal Page</h1>
+    </header>
+    
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+    </nav>
 
-	<h1>My Personal Page</h1>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>
+            Hello! My name is [Your Name] and this is my personal webpage. I am passionate about web development and
+            love to create awesome websites.
+        </p>
 
-	<p>Welcome to my personal page. This is just an example webpage. It doesn't use any CSS styles, so it's pretty ugly.</p>
+        <h2>Projects</h2>
+        <ul>
+            <li>Project 1: [Project Name]</li>
+            <li>Project 2: [Project Name]</li>
+            <li>Project 3: [Project Name]</li>
+        </ul>
 
-	<hr/>
-	<footer>Learn more at <a href="http://HappyCoding.io/examples/html/personal-page-unstyled">HappyCoding.io</a>!</footer>
+        <h2>Contact Me</h2>
+        <p>Email: [Your Email]</p>
+        <p>Twitter: <a href="https://twitter.com/[YourTwitterHandle]" target="_blank">@YourTwitterHandle</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My Personal Page. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
