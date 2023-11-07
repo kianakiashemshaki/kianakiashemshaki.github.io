@@ -110,7 +110,10 @@ const countries = [
     }
 ];
 
-const map = L.map('map').setView([-15, -60], 3);
+const map = L.map('map', {
+    maxZoom: 15, // Set the maximum zoom level to restrict zooming out
+    minZoom: 4
+}).setView([-15, -60], 3);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
