@@ -1,89 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Page</title>
-    <style>
-        body {
-            font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiana Kia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
 
-        header {
-            background-color: #064863;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-        nav {
-            background-color: #444;
-            padding: 10px 0;
-            text-align: center;
-        }
+    body {
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-        }
+    .container {
+      line-height: 150%;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: #e9e9e9;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    .header h1 {
+      color: #222222;
+      font-size: 30px;
+      font-family: 'Pacifico', cursive;
+    }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+    .header .social a {
+      padding: 0 5px;
+      color: #222222;
+    }
 
+    .left {
+      float: left;
+      width: 180px;
+      margin: 0;
+      padding: 1em;
+    }
 
-    </style>
+    .content {
+      margin-left: 190px;
+      border-left: 1px solid #d4d4d4;
+      padding: 1em;
+      overflow: hidden;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    li a.active {
+      background-color: #e4b784;
+      color: white;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #29292a;
+      color: white;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      margin: 30px 0;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      padding: 8px;
+    }
+
+    tr:nth-child(1) {
+      background-color: #e4b784;
+      color: white;
+    }
+
+    tr td i.fas {
+      display: block;
+      font-size: 35px;
+      text-align: center;
+    }
+
+    .footer {
+      padding: 55px 20px;
+      background-color: #2e3550;
+      color: white;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1>Welcome to My Personal Page</h1>
-        <h2>Kiana Kia :) </h2>
+  <div class="container">
+    <header class="header">
+      <h1>Kiana Kia</h1>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/kianakiashemshaki/"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-yahoo"></i></a>
+        <a href="https://kianakiashemshaki.github.io/"><i class="fab fa-github"></i></a>
+      </div>
     </header>
-    
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
-    </nav>
 
-    <div class="container">
-        <h2>About Me</h2>
-        <p>
-            I am a dedicated student at BGSU, specializing in Cybersecurity,<br> and I possess a deep passion for technology and staying abreast of the latest advancements in web development.<br> Much of my knowledge has been acquired through self-study and extensive research and development efforts. Currently, <br>I am pursuing a master's degree to further enhance my expertise in network and security.<br> I thrive on tackling intricate challenges and consistently strive to discover innovative methods to optimize user efficiency.<br><br>
-        </p>
+    <aside class="left">
+      <img src="./kia.png.jpg" width="160px" />
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#career">Interest</a></li>
+        <!-- <li><a href="#contact">Contact</a></li> -->
+        <li><a href="#about">CV</a></li>
+      </ul>
+      <br><br>
+      <p>"My other computer is your computer."<br>-Kia :)</p>
+    </aside>
 
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="/Sorce code/Map.html"> click for project 3</a></li>
-            
-        </ul>
+    <main class="content">
 
-        <h2>Contact Me</h2>
-        <p>Email: Kkiana@bgsu.edu</p>
-        <p>linkedin: <a href="https://www.linkedin.com/in/kianakiashemshaki/" target="_blank">Linkedin kiana</a></p>
-    </div>
+      <h2>About Me</h2>
+      <p>I am a dedicated student at BGSU, specializing in Cybersecurity, and I possess a deep passion for technology and staying abreast of the latest advancements in web development. As a highly motivated individual, I successfully completed my undergraduate degree in Software Engineering from Azad University of Tehran. Much of my knowledge has been acquired through self-study and extensive research and development efforts. Currently, I am pursuing a master's degree to further enhance my expertise in network and security. I thrive on tackling intricate challenges and consistently strive to discover innovative methods to optimize user efficiency.</p>
+      <h2>My Interest</h2>
+      <p> Web Development , Penetration Testing , Network Security</p>
+      <h2>Projects</h2>
+      <!-- <a href="#">Projects</a> -->
+      <li><a href="/Sorce code/Map.html"> click for project 3</a></li>
+      <li><a href=""> click for Term project</a></li>
+      <hr><br>
+      
+      <table>
+        <tr>
+          <th>SKILL 1</th>
+          <th>SKILL 2</th>
+          <th>SKILL 3</th>
+        </tr>
+        <tr>
+          <td><i class="fas fa-laptop-code"></i></td>
+          <td><i class="fas fa-archive"></i></td>
+          <td><i class="fas fa-user-secret"></i></td>
+        </tr>
+        <tr>
+          <td>Programming</td>
+          <td>Operating System</td>
+          <td>Network & Security</td>
+        </tr>
+        <tr>
+      </table>
+   
+    </main>
 
-    <footer>
-        <p>&copy; 2023 My Personal Page. All rights reserved.</p>
-    </footer>
+    <footer class="footer">&copy; Copyright Ms. Kia</footer>
+  </div>
 </body>
 
 </html>
