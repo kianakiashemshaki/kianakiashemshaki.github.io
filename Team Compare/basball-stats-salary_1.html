@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- <script src="https://d3js.org/d3.v3.js"></script> -->
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script><script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line, 
+.axis1 path,
+.axis1 line {
+  fill: none;
+  stroke: #E6E7E8;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path, .x.axis1 path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.legend-box {
+  cursor: pointer;  
+}
+
+#mouse-tracker {
+  stroke: #E6E7E8;
+  stroke-width: 1px;
+}
+
+.hover-line { 
+  stroke: #E6E7E8;
+  fill: none;
+  stroke-width: 1px;
+  left: 10px;
+  shape-rendering: crispEdges;
+  opacity: 1e-6;
+}
+
+.hover-text {
+  stroke: none;
+  font-size: 30px;
+  font-weight: bold;
+  fill: #000000;
+}
+
+.tooltip {
+  font-weight: normal;
+}
+
+.brush .extent {
+  stroke: #FFF;
+  shape-rendering: crispEdges;
+}
+.container {
+ border: 1px solid;
+    width: 760px;
+    height: 759px;
+    position: absolute;
+    top: 37px;
+    left: 78px
+}
+</style>
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz">
+  <div class="container">
+
+</div>
+<div id="legend"></div>
+ 
+
+
+<script>
+$(function(){
+/*var color = d3.scale.ordinal().range(["#48A36D",  "#56AE7C",  "#64B98C", "#72C39B", "#80CEAA", "#80CCB3", "#7FC9BD", "#7FC7C6", "#7EC4CF", "#7FBBCF", "#7FB1CF", "#80A8CE", "#809ECE", "#8897CE", "#8F90CD", "#9788CD", "#9E81CC", "#AA81C5", "#B681BE", "#C280B7", "#CE80B0", "#D3779F", "#D76D8F", "#DC647E", "#E05A6D", "#E16167", "#E26962", "#E2705C", "#E37756", "#E38457", "#E39158", "#E29D58", "#E2AA59", "#E0B15B", "#DFB95C", "#DDC05E", "#DBC75F", "#E3CF6D", "#EAD67C", "#F2DE8A"]); */ 
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 30, left: 70},
+    width = 800 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
+var ar = [];
+var sumstat = [];
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+var color
+var x;
+var y;//Read the data
+//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered.csv", function(data) {
+
+d3.csv("https://raw.githubusercontent.com/gperera-cyber/CS6260_D3/master/basketballstatdata.csv", function(error, data) {
+
+/*  color.domain(d3.keys(data[0]).filter(function(key) { // Set the domain of the color ordinal scale to be all the csv headers except "date", matching a color to an issue
+  	console.log("key: "+key);
+    return key !== "date"; 
+  }));*/
+  // group the data: I want to draw one line per group
+  ar = d3.nest() // nest function allows to group the calculation per level of a factor
+    .key(function(d) { 
+    		return d.Team;
+    })
+    .entries(data);
+
+sumstat =  ar.slice(2);
+
+  // Add X axis --> it is a date format
+    x = d3.scaleLinear()
+    .domain(d3.extent(data, function(d) { return d.Year; }))
+    .range([ 0, width ]);
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).ticks(20));
+
+  // Add Y axis
+    y = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d) { return +d.TotalSalary; })])
+    .range([ height, 0 ]);
+  svg.append("g")
+    .call(d3.axisLeft(y));
+
+  // color palette
+  var res = sumstat.map(function(d){ return d.key }) // list of group names
+  color = d3.scaleOrdinal()
+    .domain(res)
+    .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999' ])
+
+  // Draw the line
+  svg.selectAll(".line")
+      .data(sumstat)
+      .enter()
+      .append("path")
+        .attr("fill", "none")
+        .attr("stroke", function(d){ return color(d.key) })
+        .attr("stroke-width", 1.5)
+        .attr("d", function(d){
+          return d3.line()
+            .x(function(d) { return x(d.Year); })
+            .y(function(d) { return y(+d.TotalSalary); })
+            (d.values)
+        })
+var selectedOp = [];
+  $.each( ar, function( i, val ) {
+          console.log('iterating: '+val.key);
+
+ var lbl =  $( "<label for='chk_" + val.key + "'>" + val.key + "</label>" );
+
+ var btn = $('<input />', {  type  : 'checkbox',
+              value : val.key,
+              id    : val.key,
+              on    : {
+                 click: function() {
+                      console.log(  val.key);
+                     
+                     if ($(this).is(":checked")) {
+               console.log('yes'+ val.key); 
+               selectedOp.push(val);
+            } else {
+                 console.log('no');
+                 selectedOp = selectedOp.filter(function(obj){
+                  return obj.key != val.key;
+                 });
+            }
+ update(selectedOp);
+
+                 }
+              }
+          });
+ btn.appendTo(lbl);
+$("#legend").append(lbl);
+         });
+
+
+})
+  function findMaxY(data){  // Define function "findMaxY"
+    var maxYValues = data.map(function(d) { 
+      if (d.visible){
+        return d3.max(d.values, function(value) { // Return max rating value
+          return value.rating; })
+      }
+    });
+    return d3.max(maxYValues);
+  }
+
+
+function update(selectedOp){
+ 
+var list= selectedOp;
+ 
+ d3.selectAll("path").remove();
+
+ svg.selectAll(".line")
+      .data(list)
+      .enter()
+      .append("path")
+        .attr("fill", "none")
+        .attr("stroke", function(d){ return color(d.key) })
+        .attr("stroke-width", 1.5)
+        .attr("d", function(d){
+          return d3.line()
+            .x(function(d) { return x(d.Year); })
+            .y(function(d) { return y(+d.TotalSalary); })
+            (d.values)
+        })
+}          
+    });
+ 
+
+</script>

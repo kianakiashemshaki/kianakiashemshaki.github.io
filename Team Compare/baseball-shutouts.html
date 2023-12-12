@@ -1,0 +1,159 @@
+ <!doctype html>
+ <style>
+  #slider {
+  margin: 10px; 
+ /* width: 70%;*/
+}
+fieldset{
+  width: 70%;
+}
+
+.ui-slider-tick-mark{
+    display:inline-block;
+    width:2px;
+    background: blue;
+    height:14px;
+    position:absolute;
+    top:0px;
+}
+.ui-slider {
+  position: relative;
+  text-align: left;
+  /*width: 50%;*/
+}
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1.6em;
+  height: 0.8em;
+  cursor: default;
+    background:#FDF8E4;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+.ui-slider-horizontal {
+  height: 1.8em;
+    background:#846733;
+}
+#end-amount{
+  position: relative;
+    bottom: 34px;
+    left: 50%;
+}
+
+  </style>
+<body>
+<div id="pie"></div>
+
+<fieldset>
+  <legend>Select an year</legend>
+<p>
+  Selected Year: <span  id="amount" >2001</span>
+</p>
+<span  id="start-amount" ></span>
+<div id="slider-range"></div><span id="end-amount" ></span>
+</fieldset>
+
+</body>
+<!-- <button id="addData"> Add Data </button> -->
+ 
+<script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+<!-- <script   src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="d3pie.js"></script>
+
+<script>
+
+  $(function() {
+     
+ 
+var val;
+var teamsArr = [];
+var yearsArr = [];
+var dataSet;
+var yearBasedData;
+var firstSelectedYear ="2001";
+
+d3.csv("https://raw.githubusercontent.com/gperera-cyber/CS6260_D3/master/basketballstatdata.csv", function(data) {
+
+var nameKeys = d3.map(data, function(d){return(d.Team)}).keys();
+var yearKeys = d3.map(data, function(d){return(d.Year)}).keys();
+var all = d3.map(data, function(d){return(d.Team)});
+var yearBasedData = d3.nest()
+    .key(function(d) { 
+        return d.Year;
+    })
+    .entries(data);
+ 
+ var yearData = getYearData(firstSelectedYear);
+
+ var yearRecord = yearData[0].values;
+var contents = transformToPieData(yearRecord);
+ $("#start-amount").html(yearKeys[0]);  
+  $("#end-amount").html(yearKeys[yearKeys.length - 1]);  
+var pie = new d3pie("pie", {
+          data: {
+            content: contents
+          }
+        });
+
+console.log('yrs: '+yearKeys)
+var valMap = yearKeys;  
+ $("#slider-range").slider({
+  animate:"slow",  
+      min: 0,
+      max: valMap.length - 1,
+      value: 0,
+      slide: function(event, ui) {                        
+        var selectedYear = valMap[ui.value];
+        $("#amount").html(selectedYear);  
+        updatePie(selectedYear);
+       },
+      create: function( event, ui ) {
+      setSliderTicks(event.target);
+    }       
+    });
+
+function setSliderTicks(el) {
+    var $slider =  $(el);
+    var max =  $slider.slider("option", "max");    
+    var min =  $slider.slider("option", "min");    
+    var spacing =  100 / (max - min);
+
+    $slider.find('.ui-slider-tick-mark').remove();
+    for (var i = 0; i < max-min ; i++) {
+        $('<span class="ui-slider-tick-mark"></span>').css('left', (spacing * i) +  '%').appendTo($slider); 
+     }
+}
+
+
+function updatePie(selectedYear){
+      var yearData = getYearData(selectedYear);
+
+ var yearRecord = yearData[0].values;
+var contents = transformToPieData(yearRecord);
+  pie.updateProp("data.content", contents);
+}
+
+function transformToPieData(initialDataArray){
+  var contents = [];
+  $.each(initialDataArray, function( index, value ) {
+contents.push({ label: (value.Team + " - ("+value.Shutouts+")"), value: parseInt(value.Shutouts) });
+});
+  return contents;
+}
+
+function getYearData(selectedYear){
+  return yearBasedData.filter(function(d){
+  return d.key == selectedYear;
+ });
+}
+ 
+});
+
+
+    });
+</script>
+ 
