@@ -1,6 +1,5 @@
 # Brief CV
 
----
 
 Experienced software developer specializing in frontend and backend development, with a strong background in cloud technologies.
 
