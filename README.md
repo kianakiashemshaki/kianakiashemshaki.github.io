@@ -5,9 +5,9 @@
 
 
 # Brief CV
+# MS in Computer Science Specialization in Cybersecurity
+# BE in Softwar Engineering
 
-
-Experienced software developer specializing in frontend and backend development, with a strong background in cloud technologies.
 
 ## Skills and Technologies
 
