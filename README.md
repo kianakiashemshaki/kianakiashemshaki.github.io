@@ -25,4 +25,3 @@
 | Technical Knowledge   | Communication Protocols (TCP/UDP), Firewall, Malware, Version Control System (Git), Law and Digital Forensics Evidence, File System Analysis, Algorithm and Design Analysis, Designing and developing RESTful APIs, Analyze the Visualization design choices for different problems |
 | Personal              | Team working, Teaching Assistant, Communication and Presentation |
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://kianakiashemshaki.github.io) [![Email](https://img.shields.io/badge/Email-kkiana@bgsu.edu-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:kkiana@bgsu.edu)
