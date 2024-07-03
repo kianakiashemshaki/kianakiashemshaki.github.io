@@ -1,132 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kiana Kia</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiana Kiashemshaki</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            scroll-behavior: smooth; /* Add smooth scrolling */
+        }
+        section {
+            padding: 60px 0;
+            color: rgb(246, 242, 242);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left; /* Align text to the left */
+        }
+        #home, #about, #resume, #projects {
+            background-position: center;
+            background-size: cover;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 50px;
+        }
+        #home, #about {
+            height: 100vh; /* Set section height to 100vh */
+        }
+        #resume {
+            background-image: url('resume.jpg'); /* Add background image for resume section */
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+        }
+        #projects {
+            background-image: url('proj.jpg'); /* Background image for projects section */
+            background-position: center;
+            background-size: cover;
+            height: 40vh; /* Set section height to 50vh */
+           
+        }
+        .home-heading {
+            font-size: 5rem; /* Change font size here */
+            font-family:  inherit;/* Change font family here */
+            text-align: left; /* Align text to the left */
+            margin-bottom: 20px; /* Add space below the heading */
+            margin-top: 100px; /* Add space above the heading */
+        }
+        .cards {
+            display: flex;
+            align-items: center; /* Align items vertically center */
+            justify-content: flex-start; /* Align items to the left */
+            margin-top: 20px;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: white;
+            margin-right: 20px;
+            width: 200px;
+            text-align: center;
+        }
+        .card:last-child {
+            margin-right: 0;
+        }
+        .card a {
+            color: rgb(246, 243, 243);
+            text-decoration: none;
+        }
+        .social-icons {
+            margin-top: 20px;
+            text-align: left; /* Align icons to the left */
+        }
+        .social-icons a {
+            color: rgb(237, 177, 98);
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        @media (max-width: 767.98px) {
+            .home-heading {
+                font-size: 2.5rem;
+            }
+            #home .cards, #projects .cards {
+                flex-direction: column;
+            }
+            .card {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+        }
+        #projects h2 {
+            margin-bottom: 100px; /* Add margin below the Projects title */
+        }
+        .experience-chain {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #555;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 25px 0;
+            position: relative;
+        }
+        .circle::after {
+            content: '';
+            width: 4px;
+            height: 25px;
+            background-color: #9a9797;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        .circle:last-child::after {
+            display: none;
+        }
 
-    body {
-      margin: 0;
-      box-sizing: border-box;
-      font-family: 'Lato', sans-serif;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px;
-      background-color: #e9e9e9;
-    }
-
-    .header h1 {
-      color: #222222;
-      font-size: 30px;
-      font-family: 'Pacifico', cursive;
-    }
-
-    .header .social a {
-      padding: 0 5px;
-      color: #222222;
-    }
-
-    .left img {
-      width: 100%;
-      max-width: 160px;
-      height: auto;
-    }
-
-    .footer {
-      padding: 20px;
-      background-color: #e9e9e9;
-      color: #000;
-      text-align: center;
-    }
-
-    .content h2 {
-      font-family: 'Pacifico', cursive;
-    }
-
-    .content p {
-      margin-bottom: 20px;
-    }
-
-    .btn-custom {
-      font-family: 'Verdana', sans-serif;
-      margin-bottom: 10px;
-    }
-  </style>
+      
+        .experience-description {
+            margin-left: 80px;
+            margin-top: -50px;
+        }
+        .progress-bar {
+        background-color: #ca3f3f; /* Red color */
+        }
+        
+ 
+    </style>
 </head>
-
 <body>
-  <div class="container-fluid">
-    <header class="header">
-      <h1>Kiana Kia</h1>
-      <div class="social">
-        <a href="https://www.linkedin.com/in/kianakiashemshaki/"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-yahoo"></i></a>
-        <a href="https://kianakiashemshaki.github.io/"><i class="fab fa-github"></i></a>
-      </div>
-    </header>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000000;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#resume">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="row">
-      <aside class="col-md-3 col-sm-12 text-center left" style="color: rgb(225, 135, 10);">
-        <img src="./kia.png.jpg" alt="Kia">
-        <ul class="list-unstyled mt-3">
-          <li><a class="active btn btn-outline-dark d-block mb-2" href="#home">Home</a></li>
-          <li><a class="btn btn-outline-dark d-block mb-2" href="./kiana CV.docx">CV</a></li>
-        </ul>
-        <p>"My other computer is your computer."<br>-Kia :)</p>
-      </aside>
+    <!-- Home Section -->
+    <section id="home" style="background-image: url('home.jpg');">
+        <div>
+            <h1 class="home-heading">Kiana<br>Kiashemshaki</h1>
+            <div class="cards">
+                <div class="card">
+                    <a href="./kiana CV.docx" class="btn btn-danger" download>Download CV</a>
+                </div>
+                <div class="card">
+                    <a href="mailto:kkiana@bgsu.edu" class="btn btn-danger">Email</a>
+                </div>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="mailto:kkiana@bgsu.edu"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/kianakiashemshaki" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/kianakiashemshaki/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
 
-      <main class="col-md-9 col-sm-12 content">
-        <h2>About Me</h2>
-        <p>I am a dedicated student at BGSU, specializing in Cybersecurity, and I possess a deep passion for technology and staying abreast of the latest advancements in web development. As a highly motivated individual, I successfully completed my undergraduate degree in Software Engineering. Much of my knowledge has been acquired through self-study and extensive research and development efforts. Currently, I am pursuing a master's degree to further enhance my expertise in network and security. I thrive on tackling intricate challenges and consistently strive to discover innovative methods to optimize user efficiency.</p>
-        <h2>My Interest</h2>
-        <p>Web Development, Penetration Testing, Network Security</p>
-        <h2>Projects</h2>
-        <a href="/south american/home.html" class="btn btn-outline-dark btn-custom">Click for South America Project</a>
-        <a href="Water and Soil analysis/watermap.html" class="btn btn-outline-dark btn-custom">Click for Water and Soil Analysis</a>
-        <a href="Tin Project/index.html" class="btn btn-outline-dark btn-custom">Click for Tin Project</a>
-        <a href="https://www.canva.com/design/DAGHw29c60k/XEZSW6Fxkltd1a1_VrTMRg/view?utm_content=DAGHw29c60k&utm_campaign=designshare&utm_medium=link&utm_source=editor#1" class="btn btn-outline-dark btn-custom">Click for Canva Design</a>
+    <!-- About Section -->
+    <section id="about" style="background-image: url('kia.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-left"> <!-- Adding text-left class -->
+                        <h1>About Me</h1><br>
+                        <p class="lead">I am a dedicated student at BGSU, specializing in Cybersecurity, and I possess a deep passion for technology and staying abreast of the latest advancements in web development. As a highly motivated individual, I successfully completed my bachelor's degree in Software Engineering. Much of my knowledge has been acquired through self-study and extensive research and development efforts. Currently, I am pursuing a master's degree to further enhance my expertise in network and security. I thrive on tackling intricate challenges and consistently strive to discover innovative methods to optimize user efficiency.</p>
+                        <!-- Add more content or input field for description here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Skills</h3>
+                    <br> 
+                    <ul class="list-unstyled">
+                        <li>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-laptop-code"></i> Frontend Developer</span>
+
+                                <!--<span><i class="fab fa-css3-alt"></i> CSS</span> -->
+                                <!--<span><i class="fab fa-js-square"></i> JavaScript</span>-->
+                            </div>
+                            <div class="progress mt-2">
+                                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    85%
+                                </div>
+                            </div>
+                        </li>
+
+                         <br>
+
+                        <li>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-server"></i> Backend Developer</span>
+                              <!-- <span><i class="fab fa-js-square"></i> Express.js</span> -->
+                               <!--<span><i class="fas fa-code"></i> RAML</span>-->
+                            </div>
+                            <div class="progress mt-2">
+                                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                    80%
+                                </div>
+                            </div>
+                        </li>
+
+                        <br>
+
+                        <li>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-chart-line"></i> Data Science</span>
+                                <!--<span><i class="fas fa-database"></i> Pandas</span>-->
+                                <!--<span><i class="fas fa-calculator"></i> NumPy</span>-->
+                            </div>
+                            <div class="progress mt-2">
+                                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                    70%
+                                </div>
+                            </div>
+                        </li>
+
+                        <br>
 
 
-        <table class="table mt-4">
-          <thead>
-            <tr>
-              <th>SKILL 1</th>
-              <th>SKILL 2</th>
-              <th>SKILL 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><i class="fas fa-laptop-code"></i></td>
-              <td><i class="fas fa-archive"></i></td>
-              <td><i class="fas fa-user-secret"></i></td>
-            </tr>
-            <tr>
-              <td>Programming</td>
-              <td>Operating System</td>
-              <td>Network & Security</td>
-            </tr>
-          </tbody>
-        </table>
-      </main>
-    </div>
+                    <li class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-shield-alt"></i> Cybersecurity</span>
 
-    <footer class="footer">&copy; Copyright Kia</footer>
-  </div>
+                        <!--<span><i class="fas fa-database"></i> PostgreSQL</span>-->
+                        <!--<span><i class="fas fa-database"></i> MongoDB</span>-->
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            85%
+                        </div>
+                    </div>
+                </li>
+
+         
+                        <!-- Add more software skills as needed -->
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Experience</h3>
+                    <div class="experience-chain">
+                        <div class="circle">20-21</div>
+                        <div class="experience-description">Web Developer at Iran Green Host</div>
+                        <div class="circle">21-22</div>
+                        <div class="experience-description">IT Support at Iran Green Host</div>
+                        <div class="circle">23-25</div>
+                        <div class="experience-description">Graduate Teaching Assistant</div>
+                   
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <h3>Education</h3>
+                    <br>
+                    <ul>
+                        <li>MS in Computer Science.</li>
+                        <li>BS in Software Engineering.</li>
+                        <!-- Add more design skills as needed -->
+                    </ul>
+                    <h3>Language Skills</h3>
+                    <br>
+                    <ul class="list-unstyled">
+                        <li class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-globe"></i> English</span>
+                           
+                            </div>
+                            <div class="progress mt-2">
+                                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                    90%
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="list-unstyled">
+                            <li class="mb-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Persian</span>
+                               
+                                </div>
+                                <div class="progress mt-2">
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                        100%
+                                    </div>
+                                </div>
+                            </li>
+                        
+                    </ul>
+                        <!-- Add more languages as needed -->
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="text-align: left; padding-left: 50px;">
+        <div class="container">
+            <h2 style="margin-bottom: 0;">Projects</h2> <!-- Adjusted to align left and bottom with About Me -->
+            <div class="cards">
+                <div class="card">
+                    <a href="/south american/home.html" class="btn btn-dark" target="_blank">South America Project</a>
+                </div>
+                <div class="card">
+                    <a href="Water and Soil analysis/watermap.html" class="btn btn-dark" target="_blank">Water and Soil Analysis</a>
+                </div>
+                <div class="card">
+                    <a href="Tin Project/index.html" class="btn btn-dark" target="_blank">Tin Project</a>
+                </div>
+                <div class="card"> <!-- New 4th Project Card -->
+                    <a href="https://www.canva.com/design/DAGHw29c60k/XEZSW6Fxkltd1a1_VrTMRg/view?utm_content=DAGHw29c60k&utm_campaign=designshare&utm_medium=link&utm_source=editor#1" class="btn btn-dark" target="_blank">Canva Design</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center mt-5" style="background-color: rgb(255, 255, 255); color: rgb(237, 177, 98); padding: 20px;">
+        <p>&copy; 2024 All rights reserved :)</p>
+    </footer>
+    
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Smooth Scrolling JavaScript -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>
