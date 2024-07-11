@@ -13,16 +13,16 @@
         body, html {
             height: 100%;
             margin: 0;
-            scroll-behavior: smooth; /* Add smooth scrolling */
+            scroll-behavior: smooth;
+            font-family: 'Roboto', sans-serif;
         }
         section {
             padding: 60px 0;
             color: rgb(246, 242, 242);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: left; /* Align text to the left */
+            text-align: left;
         }
         #home, #about, #resume, #projects {
             background-position: center;
@@ -32,32 +32,25 @@
             padding-left: 50px;
         }
         #home, #about {
-            height: 100vh; /* Set section height to 100vh */
+            height: 100vh;
         }
         #resume {
-            background-image: url('./Image/resume.jpg'); /* Add background image for resume section */
-            background-position: center;
-            background-size: cover;
+            background-image: url('./Image/resume.jpg');
             height: 100vh;
         }
         #projects {
-            background-image: url('./Image/proj.jpg'); /* Background image for projects section */
-            background-position: center;
-            background-size: cover;
-            height: 40vh; /* Set section height to 50vh */
-           
+            background-image: url('./Image/proj.jpg');
+            height: 40vh;
         }
         .home-heading {
-            font-size: 5rem; /* Change font size here */
-            font-family:  inherit;/* Change font family here */
-            text-align: left; /* Align text to the left */
-            margin-bottom: 20px; /* Add space below the heading */
-            margin-top: 100px; /* Add space above the heading */
+            font-size: 5rem;
+            margin-bottom: 20px;
+            margin-top: 100px;
         }
         .cards {
             display: flex;
-            align-items: center; /* Align items vertically center */
-            justify-content: flex-start; /* Align items to the left */
+            align-items: center;
+            justify-content: flex-start;
             margin-top: 20px;
         }
         .card {
@@ -76,7 +69,7 @@
         }
         .social-icons {
             margin-top: 20px;
-            text-align: left; /* Align icons to the left */
+            text-align: left;
         }
         .social-icons a {
             color: rgb(237, 177, 98);
@@ -94,9 +87,12 @@
                 margin-bottom: 20px;
                 width: 100%;
             }
+            .cards {
+                justify-content: center;
+            }
         }
         #projects h2 {
-            margin-bottom: 100px; /* Add margin below the Projects title */
+            margin-bottom: 100px;
         }
         .experience-chain {
             display: flex;
@@ -117,32 +113,14 @@
             position: relative;
             text-align: center;
         }
-       /* .circle::after {
-            content: '';
-            width: 4px;
-            height: 25px;
-            background-color: #9a9797;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .circle:last-child::after {
-            display: none;
-        } */
-
-      
         .experience-description {
             margin-left: 100px;
             margin-top: -85px;
-            font-size: 20px; 
+            font-size: 20px;
         }
         .progress-bar {
-        background-color: #ca3f3f; /* Red color */
+            background-color: #ca3f3f;
         }
-        
- 
     </style>
 </head>
 <body>
@@ -298,7 +276,7 @@
                         <!-- Add more design skills as needed -->
                     </ul>
                     <h3>Language Skills</h3>
-            
+                    
                     <ul class="list-unstyled">
                         <li class="mb-4">
                             <div class="d-flex justify-content-between align-items-center">
@@ -326,7 +304,7 @@
                                 </div>
                             </li>
                     </ul>
-                               <ul class="list-unstyled">
+                    <ul class="list-unstyled">
                         <li class="mb-4">
                             <div class="d-flex justify-content-between align-items-center">
                                 <span>Spanish</span>
@@ -338,8 +316,6 @@
                                 </div>
                             </div>
                         </li>
-
-                               </ul>
                         <!-- Add more languages as needed -->
                 
                 </div>
@@ -350,7 +326,7 @@
     <!-- Projects Section -->
     <section id="projects" style="text-align: left; padding-left: 50px;">
         <div class="container">
-            <h2 style="margin-bottom: 0;">Projects</h2> <!-- Adjusted to align left and bottom with About Me -->
+            <h2 style="margin-bottom: 0;">Projects</h2> 
             <div class="cards">
                 <div class="card">
                     <a href="/south american/home.html" class="btn btn-dark" target="_blank">South America Project</a>
@@ -361,7 +337,7 @@
                 <div class="card">
                     <a href="Tin Project/index.html" class="btn btn-dark" target="_blank">Tin Project</a>
                 </div>
-                <div class="card"> <!-- New 4th Project Card -->
+                <div class="card"> 
                     <a href="https://www.canva.com/design/DAGHw29c60k/XEZSW6Fxkltd1a1_VrTMRg/view?utm_content=DAGHw29c60k&utm_campaign=designshare&utm_medium=link&utm_source=editor#1" class="btn btn-dark" target="_blank">Canva Design</a>
                 </div>
             </div>
@@ -373,22 +349,9 @@
     </footer>
     
     
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Bootstrap and jQuery Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Smooth Scrolling JavaScript -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
