@@ -10,7 +10,7 @@ This project involves creating visualizations for water and soil datasets acquir
 - Seasonal data visualized in bar charts for easy comparison.
 - User-friendly interface for seamless navigation through datasets.
 - Detailed insights into soil and water dynamics based on field readings.
-![Project Overview](read.png)
+![Project Overview](analysis.png)
 
 ## Usage
 To view the project, navigate to the following link: [Soil and Water Analysis Visualization Tool](https://kianakiashemshaki.github.io/Water%20and%20Soil%20analysis/watermap.html).
