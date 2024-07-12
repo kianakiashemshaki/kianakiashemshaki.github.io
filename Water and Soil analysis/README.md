@@ -10,6 +10,7 @@ This project involves creating visualizations for water and soil datasets acquir
 - Seasonal data visualized in bar charts for easy comparison.
 - User-friendly interface for seamless navigation through datasets.
 - Detailed insights into soil and water dynamics based on field readings.
+  
 ![Project Overview](analysis.png)
 
 ## Usage
