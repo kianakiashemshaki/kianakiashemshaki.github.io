@@ -1,7 +1,7 @@
 
 # Face Detection Web Application
 
-# Overview:
+## Overview:
 This project is a web application that allows users to upload images and detect faces within those images using a robust face detection algorithm.
 
 ![Project Overview](uploads/result_1.jpg)
