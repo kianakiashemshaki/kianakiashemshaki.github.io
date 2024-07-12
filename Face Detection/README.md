@@ -1,22 +1,29 @@
 
 # Face Detection Web Application
 
-## Overview:
+# Overview:
 This project is a web application that allows users to upload images and detect faces within those images using a robust face detection algorithm.
 
 ![Project Overview](uploads/result_1.jpg)
 
 # Tools Used:
 
-Framework: Flask for web application development.
-Computer Vision: OpenCV for image processing.
-Face Detection: MTCNN (Multi-Task Cascaded Convolutional Networks) for detecting faces in images.
+**Framework:** Flask for web application development.
+
+**Computer Vision:** OpenCV for image processing.
+
+**Face Detection:** MTCNN (Multi-Task Cascaded Convolutional Networks) for detecting faces in images.
+
 # Key Features:
 
-File Upload: Users can upload images in various formats (PNG, JPG, JPEG, GIF).
-Face Detection: The application detects faces in the uploaded images using the MTCNN model.
-Image Processing: Detected faces are highlighted with rectangles using OpenCV.
-Result Display: Processed images with detected faces are saved and displayed on a separate page for the user to view and download.
+**File Upload:** Users can upload images in various formats (PNG, JPG, JPEG, GIF).
+
+**Face Detection:** The application detects faces in the uploaded images using the MTCNN model.
+
+**Image Processing:** Detected faces are highlighted with rectangles using OpenCV.
+
+**Result Display:** Processed images with detected faces are saved and displayed on a separate page for the user to view and download.
+
 # Challenges and Solutions:
 
 ### Suppressing TensorFlow Logging:
