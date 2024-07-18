@@ -6,7 +6,7 @@
 
 # Brief CV
 - MS in Computer Science Specialization in Cybersecurity
-- BE in Software Engineering
+- BE in Computer Software Engineering
 
 ## Skills and Technologies
 
