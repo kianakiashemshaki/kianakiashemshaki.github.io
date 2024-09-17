@@ -2,6 +2,7 @@
 
 ## Overview
 TinDog is a web-based application designed to help dog owners connect with nearby dogs for companionship. The platform features an interactive interface that showcases various aspects of dog adoption and socialization, making it easy for users to find matches in their area.
+
 ![Project Overview](images/read.png)
 
 ## Features
