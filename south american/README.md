@@ -3,6 +3,8 @@
 ## Overview
 This project is a web-based visualization tool designed to explore various aspects of South American countries. It provides an interactive geographic map with brief information about each country and a detailed, zoomable burst view on a separate page for in-depth data.
 
+![South America Map](./images/map.png)
+
 ## Features
 * Interactive Map: Geographical map of South America with clickable countries.
 * Overview Card: Insights into the cultural, historical, and natural aspects of each country.
