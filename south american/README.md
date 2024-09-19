@@ -10,6 +10,9 @@ This project is a web-based visualization tool designed to explore various aspec
 * Overview Card: Insights into the cultural, historical, and natural aspects of each country.
 * Tool Guide: Instructions for navigating the visualization features.
 * Detailed Information Page: Zoomable burst view for detailed country-specific data.
+  
+![South America Map](./images/data.png)
+
 ## Usage
 Open home.html to view the project's homepage with the geographical map.
 Use the 'Click here to see more detail' button to navigate to the detailed information page.
