@@ -14,7 +14,7 @@ This project involves creating visualizations for water and soil datasets acquir
 ![Project Overview](soil.png)
 
 ## Usage
-To view the project, navigate to the following link: [Soil and Water Analysis Visualization Tool](https://kianakiashemshaki.github.io/Water%20and%20Soil%20analysis/watermap.html).
+To view the project, navigate to the following link: [Soil and Water Analysis Visualization Tool](https://kianakiashemshaki.github.io/Water%20and%20Soil%20analysis%20Project/watermap.html).
 
 ## Requirements
 - Internet browser with support for HTML5, CSS3, and JavaScript.
