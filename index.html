@@ -4,290 +4,250 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiana Kiashemshaki</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
+        body {
+            font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            font-family: 'Roboto', sans-serif;
         }
-        section {
-            padding: 60px 0;
-            color: rgb(246, 242, 242);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: left;
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+            z-index: 1;
         }
-        #home, #about, #resume, #projects {
-            background-position: center;
-            background-size: cover;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-left: 50px;
-        }
-        #home, #about {
-            height: 100vh;
-        }
-        #resume {
-            background-image: url('./Image/resume.jpg');
-            height: 100vh;
-        }
-        #projects {
-            background-image: url('./Image/proj.jpg');
-            height: 40vh;
-        }
-        .home-heading {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            margin-top: 100px;
-        }
-        .cards {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin-top: 20px;
-        }
-        .card {
-            background-color: rgba(255, 255, 255, 0.7);
-            color: white;
-            margin-right: 20px;
-            width: 200px;
-            text-align: center;
-        }
-        .card:last-child {
-            margin-right: 0;
-        }
-        .card a {
-            color: rgb(246, 243, 243);
-            text-decoration: none;
-        }
-        .social-icons {
-            margin-top: 20px;
-            text-align: left;
-        }
-        .social-icons a {
-            color: rgb(237, 177, 98);
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-        @media (max-width: 767.98px) {
-            .home-heading {
-                font-size: 2.5rem;
-            }
-            #home .cards, #projects .cards {
-                flex-direction: column;
-            }
-            .card {
-                margin-bottom: 20px;
-                width: 100%;
-            }
-            .cards {
-                justify-content: center;
-            }
-        }
-        #projects h2 {
-            margin-bottom: 100px;
-        }
-        .experience-chain {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-top: 20px;
-        }
-        .circle {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background-color: #555;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 25px 0;
-            position: relative;
-            text-align: center;
-        }
-        .experience-description {
-            margin-left: 100px;
-            margin-top: -85px;
-            font-size: 20px;
-        }
-        .progress-bar {
-            background-color: #ca3f3f;
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000000;">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#resume">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-gray-900 z-50 py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-5">
+            <h1 class="text-2xl font-bold">Kiana Kiashemshaki</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-gray-400">Home</a></li>
+                <li><a href="#about" class="hover:text-gray-400">About</a></li>
+                <li><a href="#resume" class="hover:text-gray-400">Resume</a></li>
+                <li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" style="background-image: url('./Image/home.jpg');">
-        <div>
-            <h1 class="home-heading">Kiana<br>Kiashemshaki</h1>
-            <div class="cards">
-                <div class="card">
-                    <a href="./kiana CV.docx" class="btn btn-danger" download>Download CV</a>
-                </div>
-                <div class="card">
-                    <a href="mailto:kkiana@bgsu.edu" class="btn btn-danger">Email</a>
-                </div>
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center text-center" style="background-image: url('./Image/home.jpg');">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold" data-aos="fade-up">Kiana Kiashemshaki</h1>
+            <p class="mt-4 text-lg" data-aos="fade-up" data-aos-delay="100">Cybersecurity Specialist & Web Developer</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="./kiana CV.docx" class="px-6 py-3 bg-red-600 text-white rounded hover:bg-red-500" download>Download CV</a>
+                <a href="mailto:kkiana@bgsu.edu" class="px-6 py-3 bg-gray-800 text-white rounded hover:bg-gray-700">Contact Me</a>
             </div>
-        </div>
-        <div class="social-icons">
-            <a href="mailto:kkiana@bgsu.edu"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/kianakiashemshaki" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/kianakiashemshaki/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <div class="mt-8 flex justify-center space-x-4 text-2xl">
+                <a href="mailto:kkiana@bgsu.edu" class="hover:text-red-500"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/kianakiashemshaki" target="_blank" class="hover:text-red-500"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/kianakiashemshaki/" target="_blank" class="hover:text-red-500"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" style="background-image: url('./Image/kia.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1>About Me</h1><br>
-                    <p class="lead">I am a dedicated student at BGSU, specializing in Cybersecurity, and I possess a deep passion for technology and staying abreast of the latest advancements in web development. As a highly motivated individual, I successfully completed my bachelor's degree in Software Engineering. Much of my knowledge has been acquired through self-study and extensive research and development efforts. Currently, I am pursuing a master's degree to further enhance my expertise in network and security. I thrive on tackling intricate challenges and consistently strive to discover innovative methods to optimize user efficiency.</p>
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-5">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <img src="kia.jpg" alt="Kiana" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0 md:ml-10" data-aos="fade-left">
+                    <p class="text-lg">
+                        I am a dedicated student at BGSU specializing in Cybersecurity with a passion for technology and web development. With a bachelor's degree in Software Engineering and a master's in progress, I thrive on tackling intricate challenges and optimizing user efficiency.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-900 text-gray-100">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+            <!-- Front-end Skills -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-2xl font-bold mb-4 text-red-500">Front-End</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>HTML/XML</li>
+                    <li>CSS & Bootstrap</li>
+                    <li>JavaScript & React.js</li>
+                </ul>
+            </div>
+
+            <!-- Back-end Skills -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-2xl font-bold mb-4 text-blue-500">Back-End</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Node.js & Express.js</li>
+                    <li>REST API Design</li>
+                    <li>Server Management</li>
+                </ul>
+            </div>
+
+            <!-- Database Skills -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-2xl font-bold mb-4 text-green-500">Database Management</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>SQL (MariaDB, MySQL, PostgreSQL)</li>
+                    <li>NoSQL (MongoDB)</li>
+                </ul>
+            </div>
+
+            <!-- Cybersecurity Skills -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-2xl font-bold mb-4 text-yellow-500">Cybersecurity</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>FTK Imager & Autopsy</li>
+                    <li>Wireshark & Kali Linux</li>
+                    <li>Magnet Axiom & Nmap</li>
+                </ul>
+            </div>
+
+            <!-- Data Analysis Tools -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-2xl font-bold mb-4 text-purple-500">Data Tools</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Python (Pandas, NumPy, Matplotlib)</li>
+                    <li>Scikit-learn & Data Visualization</li>
+                </ul>
+            </div>
+
+            <!-- Tools & Certifications -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-2xl font-bold mb-4 text-pink-500">Tools & Certifications</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Docker & AWS (EC2, S3, RDS)</li>
+                    <li>Git & Version Control</li>
+                    <li>Certified: Full Stack Developer, Cloud Computing, Ethical Hacking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Resume Section -->
-    <section id="resume">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Skills</h3>
-                    <br>
-                    <ul class="list-unstyled">
-                        <li>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span><i class="fas fa-laptop-code"></i> Frontend Developer</span>
-                            </div>
-                            <div class="progress mt-2">
-                                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    85%
-                                </div>
-                            </div>
-                        </li>
-                        <br>
-                        <li>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span><i class="fas fa-server"></i> Backend Developer</span>
-                            </div>
-                            <div class="progress mt-2">
-                                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                    80%
-                                </div>
-                            </div>
-                        </li>
-                        <br>
-                        <li>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span><i class="fas fa-chart-line"></i> Data Science</span>
-                            </div>
-                            <div class="progress mt-2">
-                                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                    70%
-                                </div>
-                            </div>
-                        </li>
-                        <br>
-                        <li>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span><i class="fas fa-shield-alt"></i> Cybersecurity</span>
-                            </div>
-                            <div class="progress mt-2">
-                                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    85%
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3>Experience</h3>
-                    <div class="experience-chain">
-                        <div class="circle">2020-2021</div>
-                        <div class="experience-description">IT Support at Iran Green Host</div>
-                        <div class="circle">2021-2022</div>
-                        <div class="experience-description">Web Developer at Iran Green Host</div>
-                        <div class="circle">2023-2025</div>
-                        <div class="experience-description">Graduate Teaching Assistant</div>
+    <!-- Resume Section -->
+<section id="resume" class="py-20 bg-gray-900 text-gray-100">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Resume</h2>
+        
+        <!-- Timeline Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Education Section -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-2xl font-bold mb-4 text-blue-500">Education</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>MS in Computer Science</strong> (2023-2025)</li>
+                    <li><strong>BS in Software Engineering</strong> (2015-2019)</li>
+                </ul>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-2xl font-bold mb-4 text-red-500">Experience</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-bold">Graduate Teaching Assistant</h4>
+                        <p class="text-sm text-gray-400">Bowling Green State University (2023-2025)</p>
+                        <p>Facilitated study sessions, graded assignments, and conducted labs for operating systems courses.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Web Developer</h4>
+                        <p class="text-sm text-gray-400">Iran Green Host (2021-2022)</p>
+                        <p>Developed web applications and optimized website performance with React and JavaScript.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">IT Support</h4>
+                        <p class="text-sm text-gray-400">Iran Green Host (2020-2021)</p>
+                        <p>Managed IT infrastructure, resolved network issues, and maintained security.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <h3>Education</h3>
-                    <ul>
-                        <li>MS in Computer Science</li>
-                        <li>BS in Software Engineering</li>
-                    </ul>
-                    <h3>Language Skills</h3>
-                    <ul>
-                        <li>English</li>
-                        <li>Persian</li>
-                        <li>Spanish</li>
-                    </ul>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-2xl font-bold mb-4 text-green-500">Certifications</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Full Stack Developer (Udemy)</li>
+                    <li>Cloud Computing (AWS - Udemy)</li>
+                    <li>Ethical Hacking (Udemy)</li>
+                    <li>Technical Support (Google - Coursera)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Timeline Visualization -->
+        <div class="mt-12 relative">
+            <div class="absolute left-1/2 transform -translate-x-1/2 bg-gray-700 w-1 h-full"></div>
+            <div class="space-y-8">
+                <div class="relative pl-12" data-aos="fade-right">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-red-500 rounded-full"></div>
+                    <h4 class="font-bold">2023-2025</h4>
+                    <p>Graduate Teaching Assistant at BGSU</p>
+                </div>
+                <div class="relative pl-12" data-aos="fade-right" data-aos-delay="100">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-500 rounded-full"></div>
+                    <h4 class="font-bold">2021-2022</h4>
+                    <p>Web Developer at Iran Green Host</p>
+                </div>
+                <div class="relative pl-12" data-aos="fade-right" data-aos-delay="200">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full"></div>
+                    <h4 class="font-bold">2020-2021</h4>
+                    <p>IT Support at Iran Green Host</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Projects Section -->
-    <section id="projects" style="text-align: left; padding-left: 50px;">
-        <div class="container">
-            <h2 style="margin-bottom: 0;">Projects</h2>
-            <div class="cards">
-                <div class="card">
-                    <a href="/SA_Project/home.html" class="btn btn-dark" target="_blank">South America Project</a>
-                </div>
-                <div class="card">
-                    <a href="/Water%20and%20Soil%20Analysis%20Project/watermap.html" class="btn btn-dark" target="_blank">Water and Soil Analysis</a>
-                </div>
-                <div class="card">
-                    <a href="/Tin Project/index.html" class="btn btn-dark" target="_blank">Tin Project</a>
-                </div>
-                <div class="card">
-                    <a href="https://result-answer.streamlit.app/" class="btn btn-dark" target="_blank">Math Answer Predictor</a>
-                </div>
+    <section id="projects" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-5">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="/SA_Project/home.html" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up">
+                    South America Project
+                </a>
+                <a href="/Water%20and%20Soil%20Analysis%20Project/watermap.html" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    Water and Soil Analysis
+                </a>
+                <a href="/Tin Project/index.html" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    Tin Project
+                </a>
+                <a href="https://result-answer.streamlit.app/" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                    Math Answer Predictor
+                </a>
             </div>
         </div>
     </section>
 
-    <footer class="text-center mt-5" style="background-color: rgb(255, 255, 255); color: rgb(237, 177, 98); padding: 20px;">
-        <p>&copy; 2024 All rights reserved :)</p>
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 text-center">
+        <p>&copy; 2024 Kiana Kiashemshaki. All rights reserved.</p>
     </footer>
 
-    <!-- Bootstrap and jQuery Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
