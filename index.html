@@ -39,18 +39,19 @@
                 <li><a href="#about" class="hover:text-gray-400">About</a></li>
                 <li><a href="#resume" class="hover:text-gray-400">Resume</a></li>
                 <li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
+                <li><a href="#publications" class="hover:text-gray-400">Publications</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center text-center" style="background-image: url('./Image/home.jpg');">
+    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center text-center" style="background-image: url('home.jpg');">
         <div class="absolute inset-0 hero-overlay"></div>
         <div class="z-10">
             <h1 class="text-5xl md:text-7xl font-extrabold" data-aos="fade-up">Kiana Kiashemshaki</h1>
             <p class="mt-4 text-lg" data-aos="fade-up" data-aos-delay="100">Cybersecurity Specialist & Web Developer</p>
             <div class="mt-8 flex justify-center space-x-4">
-                <a href="./CV.docx" class="px-6 py-3 bg-red-600 text-white rounded hover:bg-red-500" download>Download CV</a>
+                <a href="./kiana CV.docx" class="px-6 py-3 bg-red-600 text-white rounded hover:bg-red-500" download>Download CV</a>
                 <a href="./Portfolio.pdf" class="px-6 py-3 bg-gray-800 text-white rounded hover:bg-gray-700">Portfolio</a>
             </div>
             <div class="mt-8 flex justify-center space-x-4 text-2xl">
@@ -67,7 +68,7 @@
             <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">About Me</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <img src="./Image/kia.jpg" alt="Kiana" class="rounded-lg shadow-lg">
+                    <img src="kia.jpg" alt="Kiana" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2 mt-10 md:mt-0 md:ml-10" data-aos="fade-left">
                     <p class="text-lg">
@@ -131,61 +132,75 @@
                 </ul>
             </div>
 
-            <!-- Tools & Certifications -->
+            <!-- Tools  -->
             <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
                 <h3 class="text-2xl font-bold mb-4 text-pink-500">Tools & Certifications</h3>
                 <ul class="list-disc pl-5 space-y-2">
                     <li>Docker & AWS (EC2, S3, RDS)</li>
                     <li>Git & Version Control</li>
-                    <li>Certified: Full Stack Developer, Cloud Computing, Ethical Hacking</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-    <!-- Resume Section -->
+ <!-- Resume Section -->
 <section id="resume" class="py-20 bg-gray-900 text-gray-100">
     <div class="container mx-auto px-5">
         <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Resume</h2>
         
-        <!-- Timeline Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Education Section -->
-            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-2xl font-bold mb-4 text-blue-500">Education</h3>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li><strong>MS in Computer Science</strong> (2023-2025)</li>
-                    <li><strong>BS in Software Engineering</strong> (2015-2019)</li>
-                </ul>
-            </div>
-
+        <!-- Updated Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Experience Section -->
-            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="text-2xl font-bold mb-4 text-red-500">Experience</h3>
-                <div class="space-y-4">
+                <div class="space-y-6">
                     <div>
-                        <h4 class="font-bold">Graduate Teaching Assistant</h4>
-                        <p class="text-sm text-gray-400">Bowling Green State University (2023-2025)</p>
-                        <p>Facilitated study sessions, graded assignments, and conducted labs for operating systems courses.</p>
+                        <h4 class="font-bold text-xl text-white">Graduate Teaching Assistant</h4>
+                        <p class="text-gray-400">Bowling Green State University <span class="text-gray-400">(Aug 2023- May 2025)</span></p>
+                        <ul class="list-disc pl-5 text-gray-300 mt-2">
+                            <li>Facilitate study sessions and labs for undergraduate students in "Operating Systems" and "Network Architecture & Applications".</li>
+                            <li>Aide and grader for assignments and quizzes on Linux and C++ Programming.</li>
+                        </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold">Web Developer</h4>
-                        <p class="text-sm text-gray-400">Iran Green Host (2021-2022)</p>
-                        <p>Developed web applications and optimized website performance with React and JavaScript.</p>
+                        <h4 class="font-bold text-xl text-white">Web Developer</h4>
+                        <p class="text-gray-400">Iran Green Host <span class="text-gray-400">(Jun 2021- Jul 2022)</span></p>
+                        <ul class="list-disc pl-5 text-gray-300 mt-2">
+                            <li>Design, develop, and maintain web applications using HTML, CSS, JavaScript, and frameworks such as React.</li>
+                            <li>Optimize website performance through code and resource optimization, including image compression and caching strategies.</li>
+                            <li>Develop and integrate APIs to connect the front-end with back-end services.</li>
+                        </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold">IT Support</h4>
-                        <p class="text-sm text-gray-400">Iran Green Host (2020-2021)</p>
-                        <p>Managed IT infrastructure, resolved network issues, and maintained security.</p>
+                        <h4 class="font-bold text-xl text-white">IT Support</h4>
+                        <p class="text-gray-400">Iran Green Host <span class="text-gray-400">(Jan 2020- Jun 2021)</span></p>
+                        <ul class="list-disc pl-5 text-gray-300 mt-2">
+                            <li>Manage and maintain IT infrastructure, including servers, networks, and computer systems, ensuring optimal performance and security.</li>
+                            <li>Monitor and troubleshoot network performance, resolving connectivity issues and optimizing network reliability.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Certifications Section -->
-            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+            <!-- Education Section -->
+            <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-2xl font-bold mb-4 text-blue-500">Education</h3>
+                <ul class="list-none space-y-6">
+                    <li>
+                        <h4 class="font-bold text-xl text-white">Master's in Computer Science, Cyber Security</h4>
+                        <p class="text-gray-400">Bowling Green State University <span class="text-gray-400">(Aug 2023 - May 2025)</span></p>
+                        <p class="mt-2 text-gray-300">Coursework: Algorithms, Visualization, AI Techniques (ML, DL, NLP), Network Security, Secure Software Engineering.</p>
+                    </li>
+                    <li>
+                        <h4 class="font-bold text-xl text-white">Bachelor's in Software Engineering</h4>
+                        <p class="text-gray-400">Azad Tehran University <span class="text-gray-400">(Sep 2015 - Apr 2019)</span></p>
+                        <p class="mt-2 text-gray-300">Achievements: Awarded Best Graduate Teaching Assistant <span class="text-gray-400">(Spring 2018).</span></p>
+                    </li>
+                </ul>
+                <hr class="my-4 border-gray-600">
                 <h3 class="text-2xl font-bold mb-4 text-green-500">Certifications</h3>
-                <ul class="list-disc pl-5 space-y-2">
+                <ul class="list-disc pl-5 space-y-2 text-gray-300">
                     <li>Full Stack Developer (Udemy)</li>
                     <li>Cloud Computing (AWS - Udemy)</li>
                     <li>Ethical Hacking (Udemy)</li>
@@ -193,61 +208,78 @@
                 </ul>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Timeline Visualization -->
-        <div class="mt-12 relative">
-            <div class="absolute left-1/2 transform -translate-x-1/2 bg-gray-700 w-1 h-full"></div>
-            <div class="space-y-8">
-                <div class="relative pl-12" data-aos="fade-right">
-                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-red-500 rounded-full"></div>
-                    <h4 class="font-bold">2023-2025</h4>
-                    <p>Graduate Teaching Assistant at BGSU</p>
-                </div>
-                <div class="relative pl-12" data-aos="fade-right" data-aos-delay="100">
-                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-500 rounded-full"></div>
-                    <h4 class="font-bold">2021-2022</h4>
-                    <p>Web Developer at Iran Green Host</p>
-                </div>
-                <div class="relative pl-12" data-aos="fade-right" data-aos-delay="200">
-                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full"></div>
-                    <h4 class="font-bold">2020-2021</h4>
-                    <p>IT Support at Iran Green Host</p>
-                </div>
+
+
+
+   <!-- Projects Section -->
+<section id="projects" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Projects</h2>
+        <div class="space-y-8" data-aos="fade-up">
+            
+            <!-- Comprehensive Analysis of Mathematics Learning -->
+            <div class="bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-xl font-bold text-white">Comprehensive Analysis of Factors Affecting Mathematics Learning</h3>
+                <p class="text-gray-400">Skills: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Statistical Analysis, Machine Learning</p>
+                <p class="mt-2 text-gray-300">Conducted a study analyzing factors influencing student performance in higher education mathematics. Built machine learning models for predictive insights and clustering techniques to group similar behaviors.</p>
+                <a href="https://result-answer.streamlit.app/" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project</a>
             </div>
+
+            <!-- Water and Soil Analysis Visualization -->
+            <div class="bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-xl font-bold text-white">Water and Soil Analysis Visualization</h3>
+                <p class="text-gray-400">Skills: HTML, CSS, JavaScript, D3.js, Bootstrap, Data Visualization, Web Development</p>
+                <p class="mt-2 text-gray-300">Created interactive visualizations for field data related to water and soil behavior. Supported scientific exploration with dynamic and visually appealing interfaces.</p>
+                <a href="/Water%20and%20Soil%20Analysis%20Project/watermap.html" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project</a>
+            </div>
+
+            <!-- South America Country's Analysis -->
+            <div class="bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-xl font-bold text-white">South America Country's Analysis</h3>
+                <p class="text-gray-400">Skills: D3.js, Bootstrap, JavaScript, Data Analysis, Data Visualization</p>
+                <p class="mt-2 text-gray-300">Developed data visualizations for datasets representing 12 South American countries. Helped in exploring and analyzing regional data through dynamic charts and maps.</p>
+                <a href="/SA_Project/home.html" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project</a>
+            </div>
+
+            <!-- Face Detection Web Application -->
+            <div class="bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-xl font-bold text-white">Face Detection Web Application</h3>
+                <p class="text-gray-400">Skills: Python, Flask, OpenCV, MTCNN, Web Application Development, Computer Vision</p>
+                <p class="mt-2 text-gray-300">Built a web application for face detection in uploaded images using the MTCNN algorithm. Provided a clean user interface for image uploads and efficient detection results.</p>
+                <a href="https://github.com/kianakiashemshaki/Face-recognition" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project</a>
+            </div>
+
+            <!-- TinDog: Dog Matchmaking Platform -->
+            <div class="bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <h3 class="text-xl font-bold text-white">TinDog: Dog Matchmaking Platform</h3>
+                <p class="text-gray-400">Skills: HTML, CSS, Bootstrap, Responsive Design</p>
+                <p class="mt-2 text-gray-300">Designed and developed a playful web application for dog lovers to find matches for their pets. Integrated responsive design with Bootstrap for a seamless user experience and showcased key features like pricing plans and testimonials.</p>
+                <a href="/Tin Project/index.html" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project</a>
+            </div>
+
         </div>
     </div>
 </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-5">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <a href="/SA_Project/home.html" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up">
-                    South America Project
-                </a>
-                <a href="/Water%20and%20Soil%20Analysis%20Project/watermap.html" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                    Water and Soil Analysis
-                </a>
-                <a href="/Tin Project/index.html" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                    Tin Project
-                </a>
-                <a href="https://result-answer.streamlit.app/" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                    Math Answer Predictor
-                </a>
-                <a href="https://github.com/kianakiashemshaki/Face-recognition" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                    Face Detection
-                </a>
-                <a href="https://result-answer.streamlit.app/" target="_blank" class="block bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                    SQL Injection
-                </a>
-            </div>
+
+    <!-- Publications Section -->
+<section id="publications" class="py-16 bg-gray-800">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-10">Publications</h2>
+        <div class="card bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl">
+            <h3 class="text-2xl font-semibold text-white">Windows 11 Jump List and Link File Artifacts - Saved, Copied and Moved</h3>
+            <p class="text-gray-400 mt-2 italic">Under Preparation</p>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="py-6 bg-gray-900 text-center">
-        <p>&copy; 2022 Kiana Kiashemshaki. All rights reserved.</p>
+        <p>&copy; 2024 Kiana Kiashemshaki. All rights reserved.</p>
     </footer>
 
     <!-- Initialize AOS -->
