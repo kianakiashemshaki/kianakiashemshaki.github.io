@@ -96,117 +96,119 @@ Titles don’t matter, solving problems does. Whether it’s automating a task, 
         </div>
     </section>
 
-<!-- Skills Section (icon tiles like the Languages screenshot) -->
+<!-- Skills Section (ordered, all icons shown) -->
 <section id="skills" class="py-20 bg-gray-900 text-gray-100">
   <div class="container mx-auto px-5">
     <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Skills</h2>
 
-    <!-- Tile grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10 place-items-center" data-aos="fade-up" data-aos-delay="100">
+    <!-- helper grid for neat, even tiles -->
+    <style>
+      .skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;place-items:center}
+      @media (min-width:640px){.skill-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+      @media (min-width:1024px){.skill-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
+      .skill-tile img{width:64px;height:64px;object-fit:contain;opacity:.9;transition:transform .2s,opacity .2s}
+      .skill-tile img:hover{transform:scale(1.05);opacity:1}
+    </style>
 
-      <!-- Systems & Infrastructure -->
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/windows.png" alt="Windows Server / AD" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Windows / AD</span>
+    <!-- Programming Languages -->
+    <h3 class="text-2xl font-bold mt-2 mb-6 text-blue-300" data-aos="fade-up">Programming Languages</h3>
+    <div class="skill-grid" data-aos="fade-up" data-aos-delay="50">
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/c.png" alt="C"><span class="mt-3 text-lg">C</span>
       </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/linux.png" alt="Linux" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Linux</span>
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/cpp.png" alt="C++"><span class="mt-3 text-lg">C++</span>
       </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/vmware.png" alt="VMware" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">VMware</span>
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/python.png" alt="Python"><span class="mt-3 text-lg">Python</span>
       </div>
-
-      <!-- Cloud -->
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/aws.png" alt="AWS" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">AWS</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/azuread.png" alt="Azure AD" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Azure AD</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/terraform.png" alt="Terraform" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Terraform</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/kubernetes.png" alt="Kubernetes" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Kubernetes</span>
-      </div>
-
-      <!-- Programming & Automation -->
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/python.png" alt="Python" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Python</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/bash.png" alt="Bash" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Bash</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/powershell.png" alt="PowerShell" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">PowerShell</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/ansible.png" alt="Ansible" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Ansible</span>
-      </div>
-
-      <!-- Cloud Security -->
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/iam.png" alt="IAM" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">IAM</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/network-security.png" alt="Network Security" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Network Sec</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/splunk.png" alt="SIEM / Monitoring" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">SIEM / Monitoring</span>
-      </div>
-
-      <!-- Cybersecurity -->
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/nessus.png" alt="Nessus" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Nessus</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/nmap.png" alt="Nmap" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Nmap</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/wireshark.png" alt="Wireshark" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Wireshark</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/burp.png" alt="Burp Suite" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Burp Suite</span>
-      </div>
-
-      <!-- GRC -->
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/nist.png" alt="NIST/ISO/CIS" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">NIST / ISO / CIS</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/policy.png" alt="Policies & Standards" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Policies & Standards</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/risk.png" alt="Risk Mgmt" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Risk Mgmt</span>
-      </div>
-      <div class="flex flex-col items-center text-center">
-        <img src="/Image/compliance.png" alt="Compliance & Audits" class="w-16 h-16 object-contain opacity-90" />
-        <span class="mt-3 text-lg">Compliance & Audits</span>
-      </div>
-
     </div>
+
+    <!-- Scripting & Shell -->
+    <h3 class="text-2xl font-bold mt-10 mb-6 text-orange-300" data-aos="fade-up">Scripting & Shell</h3>
+    <div class="skill-grid" data-aos="fade-up" data-aos-delay="50">
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/bash.png" alt="Bash"><span class="mt-3 text-lg">Bash</span>
+      </div>
+    </div>
+
+    <!-- Operating Systems & Distros -->
+    <h3 class="text-2xl font-bold mt-10 mb-6 text-yellow-300" data-aos="fade-up">Operating Systems & Distros</h3>
+    <div class="skill-grid" data-aos="fade-up" data-aos-delay="50">
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/linux.png" alt="Linux"><span class="mt-3 text-lg">Linux</span>
+      </div>
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/kalilinux.png" alt="Kali Linux"><span class="mt-3 text-lg">Kali Linux</span>
+      </div>
+    </div>
+
+    <!-- Cloud -->
+    <h3 class="text-2xl font-bold mt-10 mb-6 text-sky-300" data-aos="fade-up">Cloud</h3>
+    <div class="skill-grid" data-aos="fade-up" data-aos-delay="50">
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/aws.png" alt="AWS"><span class="mt-3 text-lg">AWS</span>
+      </div>
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/azure.png" alt="Azure"><span class="mt-3 text-lg">Azure</span>
+      </div>
+    </div>
+
+    <!-- Identity & Directory -->
+    <h3 class="text-2xl font-bold mt-10 mb-6 text-indigo-300" data-aos="fade-up">Identity & Directory</h3>
+    <div class="skill-grid" data-aos="fade-up" data-aos-delay="50">
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/active.png" alt="Active Directory"><span class="mt-3 text-lg">Active Directory</span>
+      </div>
+    </div>
+
+    <!-- Containers & Orchestration -->
+    <h3 class="text-2xl font-bold mt-10 mb-6 text-teal-300" data-aos="fade-up">Containers & Orchestration</h3>
+    <div class="skill-grid" data-aos="fade-up" data-aos-delay="50">
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/docker.png" alt="Docker"><span class="mt-3 text-lg">Docker</span>
+      </div>
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/kuber.png" alt="Kubernetes"><span class="mt-3 text-lg">Kubernetes</span>
+      </div>
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/helm.png" alt="Helm"><span class="mt-3 text-lg">Helm</span>
+      </div>
+    </div>
+
+    <!-- IaC / Automation / CI-CD -->
+    <h3 class="text-2xl font-bold mt-10 mb-6 text-emerald-300" data-aos="fade-up">IaC, Automation & CI/CD</h3>
+    <div class="skill-grid" data-aos="fade-up" data-aos-delay="50">
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/tera.png" alt="Terraform"><span class="mt-3 text-lg">Terraform</span>
+      </div>
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/ansible.png" alt="Ansible"><span class="mt-3 text-lg">Ansible</span>
+      </div>
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/Jenkins.png" alt="Jenkins"><span class="mt-3 text-lg">Jenkins</span>
+      </div>
+    </div>
+
+    <!-- Databases -->
+    <h3 class="text-2xl font-bold mt-10 mb-6 text-pink-300" data-aos="fade-up">Databases</h3>
+    <div class="skill-grid" data-aos="fade-up" data-aos-delay="50">
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/mongo.png" alt="MongoDB"><span class="mt-3 text-lg">MongoDB</span>
+      </div>
+    </div>
+
+    <!-- Documentation -->
+    <h3 class="text-2xl font-bold mt-10 mb-6 text-gray-300" data-aos="fade-up">Documentation</h3>
+    <div class="skill-grid" data-aos="fade-up" data-aos-delay="50">
+      <div class="skill-tile flex flex-col items-center text-center">
+        <img src="/Image/LaTeX.png" alt="LaTeX"><span class="mt-3 text-lg">LaTeX</span>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 
 
